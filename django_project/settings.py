@@ -74,11 +74,25 @@ WSGI_APPLICATION = 'django_project.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
-
+'''
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': str(BASE_DIR / 'db.sqlite3'),
+    }
+}
+'''
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'djongo',
+        "CLIENT": {
+           "name": 'sampleDB',
+           "host": 'mongodb+srv://dev:dev@cluster0.73vby.mongodb.net/sampleDB?retryWrites=true&w=majority',
+           "username": 'dev',
+           "password": 'dev',
+           "authMechanism": "SCRAM-SHA-1",
+        } 
     }
 }
 
