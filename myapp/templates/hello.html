@@ -7,5 +7,12 @@
 <body>
 <h1>Hello, welcome to my first app</h1>
 <h2>hiii</h2>
+<h1>Posts</h1>
+    <ul>
+{% for covid_stats in covid_data_list %}
+
+        <li>{{covid_stats}}</li>
+{% endfor %}
+    </ul>
 </body>
 </html>
