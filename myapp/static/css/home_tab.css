@@ -1,11 +1,14 @@
 .tablet-only{
-  display:none;
+  display:block;
   }
 .desktop-and-mobile-only{
-    display:block;
+    display:none;
   }
 .nav-right {float:right}
-.desktop-only{display:inline-block;}
+.desktop-only{display:none;}
+.img-menu{
+  width:2em;
+}
 .img-logo{
   width:2.5em;
 }
@@ -20,9 +23,7 @@ body{
   z-index: -1;
   overflow-x: hidden;
 }
-.theme-li{
-  font-size: small;
-}
+
 input:not([type=submit]):not([type=reset]):focus, select:focus{
 background-color: rgb(248, 207, 130);
 border: solid rgb(252, 20, 3) 0.2em;
@@ -34,18 +35,18 @@ outline: none;
 
 #logo {width:100%}
 .nav-right {float:right}
-header {float: left;
-  width:8%;
+header {display: none;
+  width:50%;
 }
 
-nav {float: right;
-  width:92%;
+nav {float: none;
+  width:100%;
   background-color:rgb(8, 130, 187);
   font-size: 20px;
   /*transition: all 0.5s;*/
   padding-top: 0.6em;
   padding-bottom: 0.6em;
-
+  
 }
 
 nav ul {
@@ -71,12 +72,12 @@ nav li a {
 
 nav li a:hover {
   background-color:#140363;
-
+  
 }
 #nav-search{
   margin-top: 1.3em;
   display:inline-block;
-  width:13em;
+  width:20em;
   height: 3em;
   padding-left:0.
   5em;
@@ -105,7 +106,7 @@ nav li a:hover {
   padding: 1em;
   box-shadow: 1em 1em 1em #4c4f4d;
   margin-right: 2em;
-
+  
 }
 .banner-aside{
   display: inline-block;
@@ -126,10 +127,8 @@ nav li a:hover {
 }
 #article-text{
   text-align: right;
-  color: white;
+  color: rgb(87, 84, 84);
   font-size: 1.1em;
-  background-color:black;
-  opacity: 0.5;ss
 }
 #article-text h2{
 
@@ -138,9 +137,9 @@ nav li a:hover {
 
 #article-btn{
   text-align: right;
-
+  
 }
-#settings{width:1.2em;}
+#settings{width:1.2em;} 
 #img-search{width:1.2em;
           margin-top: 0.3em;}
 
@@ -160,23 +159,29 @@ nav li a:hover {
 #ticket-div{
   width:100%;
   text-align: center;
+
 }
 
 #ticket-div .details{
-  width:auto;
-  margin-left: 18%;
+  width:70%;
+/*    margin-left: 1em;*/
+/*   Responsive change */
+  margin-left: 2rem;    
+  margin-right: 5rem; 
 }
 
 #ticket-div .details_child{
   background-color: rgb(109, 190, 245);
   box-shadow: 1em 1em 1em #4c4f4d;
-
+  
 }
 
 #ticket-div select, .input-text, .input-date{
-
+  
   border-radius: 5em;
-  width: 21.5em;
+  /*width: 21.5em;*/
+  /*   Responsive change */
+  width: 8rem;
   height: 2.5em;
   box-shadow: 1em 1em 1em #4c4f4d;
   padding-left:1em;
@@ -230,26 +235,27 @@ height: 1.5em;
   color: white;
   font-weight: bold;
 }
-.table-search
+.table-search 
 {
     width:100%;
-
+    
     border: solid black;
     margin-top:2.5em;
     margin-bottom:3em;
+    margin-right: 3em;
     border-collapse: collapse;
-
+    
 }
 .table-search td
 {
 padding-left: 1em;
 }
-.even
+.even 
 {
     background-color: gray;
-
+    
 }
-.odd
+.odd 
 {
     background-color: rgb(249, 250, 236);
 }
@@ -266,7 +272,7 @@ tfoot{
   margin:0.5em;
 }
 .footer{
-
+  
   background-color:rgb(8, 130, 187);
   color: white;
 }
@@ -282,24 +288,14 @@ tfoot{
 .pagination_container{
 border: 1px solid rgba(0, 0, 0, .11);
 padding: 10px;
-width: 500px;
+/*width: 500px; */
+/*   Responsive change */
+width: 300px;
 }
-
-.dark_red_theme{
-  background-color: rgb(170, 23, 23) !important;
-  background: rgb(170, 23, 23) !important;
-  color:white !important;
+/*   Responsive change */
+#trip2::after{
+  content: "\a";
+  white-space: pre;
 }
-.dark_black_theme{
-  background-color: black !important;
-  background: black !important;
-  color:white !important;
-}
-.dark_gray_theme{
-  background-color: rgb(43, 41, 41) !important;
-  background: rgb(43, 41, 41) !important;
-  color:white !important;
-}
-
 #table-body tr:nth-child(even) {background: lightsalmon;}
 #table-body tr:nth-child(odd) {background:lightseagreen;}
