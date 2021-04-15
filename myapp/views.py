@@ -14,4 +14,4 @@ def hello(request):
         'covid_data_list': todo
     }
     print('context data:::',context)
-    return render(request, "hello.html",context)
+    return render(request, "index.html",context)
