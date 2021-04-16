@@ -1,0 +1,114 @@
+//templates/index.html
+{% extends "base.html" %}
+ 
+{% block title %}Add New Covid Report{% endblock title %}
+ 
+{% block content %}
+<div class="col-md-12">
+    <h4>New Report</h4>
+         
+ <form method="POST" class="post-form" action="/addnew">  
+   {% csrf_token %}  
+  <div class="container">  
+ <br>  
+  <div class="form-group row">  
+  <label class="col-sm-1 col-form-label"></label>  
+  <div class="col-sm-4">  
+  <h3>Enter Details</h3>  
+  </div>  
+   </div>  
+   <div class="form-group row">
+  <label class="col-sm-2 col-form-label">ID:</label>
+  <div class="col-sm-4">
+    {{ form.id }}
+  </div>
+   </div>
+   <div class="form-group row">  
+  <label class="col-sm-2 col-form-label">Country:</label>
+  <div class="col-sm-4">  
+    {{ form.country }}
+  </div>  
+   </div>  
+  <div class="form-group row">  
+  <label class="col-sm-2 col-form-label">Total Cases:</label>
+  <div class="col-sm-4">  
+    {{ form.total_cases }}
+  </div>  
+   </div>  
+  <div class="form-group row">  
+  <label class="col-sm-2 col-form-label">New Cases:</label>
+  <div class="col-sm-4">  
+    {{ form.new_cases }}
+  </div>  
+   </div>
+ <div class="form-group row">
+  <label class="col-sm-2 col-form-label">Total Deaths:</label>
+  <div class="col-sm-4">
+    {{ form.total_Deaths }}
+  </div>
+   </div>
+  <div class="form-group row">
+  <label class="col-sm-2 col-form-label">New Deaths:</label>
+  <div class="col-sm-4">
+    {{ form.new_deaths }}
+  </div>
+   </div>
+  <div class="form-group row">
+  <label class="col-sm-2 col-form-label">Total Recovered:</label>
+  <div class="col-sm-4">
+    {{ form.total_recovered }}
+  </div>
+   </div>
+  <div class="form-group row">
+  <label class="col-sm-2 col-form-label">Active Cases:</label>
+  <div class="col-sm-4">
+    {{ form.active_cases }}
+  </div>
+   </div>
+  <div class="form-group row">
+  <label class="col-sm-2 col-form-label">Serious:</label>
+  <div class="col-sm-4">
+    {{ form.serious }}
+  </div>
+   </div>
+  <div class="form-group row">
+  <label class="col-sm-2 col-form-label">Total Cases per 1M:</label>
+  <div class="col-sm-4">
+    {{ form.total_cases_percent }}
+  </div>
+   </div>
+  <div class="form-group row">
+  <label class="col-sm-2 col-form-label">Deaths per 1M:</label>
+  <div class="col-sm-4">
+    {{ form.deaths_percent }}
+  </div>
+   </div>
+  <div class="form-group row">
+  <label class="col-sm-2 col-form-label">Total Tests:</label>
+  <div class="col-sm-4">
+    {{ form.total_tests }}
+  </div>
+   </div>
+  <div class="form-group row">
+  <label class="col-sm-2 col-form-label">Tests per 1M:</label>
+  <div class="col-sm-4">
+    {{ form.tests_percent }}
+  </div>
+   </div>
+  <div class="form-group row">
+  <label class="col-sm-2 col-form-label">Population:</label>
+  <div class="col-sm-4">
+    {{ form.population }}
+  </div>
+   </div>
+
+  <div class="form-group row">  
+  <label class="col-sm-1 col-form-label"></label>  
+  <div class="col-sm-4">  
+  <button type="submit" class="btn btn-primary">Submit</button>  
+  </div>  
+   </div>  
+  </div>  
+ </form>  
+</div> 
+{% endblock content %} 
