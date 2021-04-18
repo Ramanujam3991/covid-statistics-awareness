@@ -22,7 +22,8 @@ urlpatterns = [
 
     path('',views.index),
     path('addnew',views.addnew),
-    path('edit/<int:id>', views.edit),
-    path('update/<int:id>', views.update),
-    path('delete/<int:id>', views.destroy)
+    path('edit/<Country>', views.edit),
+    path('update/<Country>', views.update),
+    path('delete/<Country>', views.destroy),
+    path('api',views.api)
 ]
