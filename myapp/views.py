@@ -42,6 +42,7 @@ def update(request, id):
     if form.is_valid():
         form.save()
         return redirect("/")
+    print(form.errors.as_data())
     return render(request, 'edit.html', {'report': report})
 def destroy(request, id):
     report = Todo.objects.get(id=id)
