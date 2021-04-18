@@ -2,7 +2,7 @@ from django.db import models
 
 # Create your models here.
 class Todo(models.Model):
-    id = models.IntegerField(default=1)
+    id = models.CharField(max_length=100)
     Country = models.CharField(primary_key=True,max_length=100, db_column='Country,Other', default='country')
     TotalCases = models.CharField(max_length=100, db_column='TotalCases', default='cases')
     New_cases = models.CharField(max_length=100, db_column='NewCases', default='new cases')

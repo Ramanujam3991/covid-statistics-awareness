@@ -35,25 +35,25 @@
    {% for todo in report %}
     <tr>  
 <!--     <td><input type="checkbox" class="checkthis" /></td>-->
-     <td><input type='text' id='id' value='{{ todo.id }}' disabled></td>
-     <td><input type='text' id='country' value='{{ todo.Country }}' disabled></td>
-     <td><input type='text' id='total_cases' value='{{ todo.TotalCases }}' disabled></td>
-     <td><input type='text' id='new_cases' value='{{ todo.New_cases }}' disabled></td>
-     <td><input type='text' id='total_Deaths' value='{{ todo.total_Deaths }}' disabled></td>
-     <td><input type='text' id='new_deaths' value='{{ todo.new_deaths }}' disabled></td>
-     <td><input type='text' id='total_recovered' value='{{ todo.total_recovered }}' disabled></td>
-     <td><input type='text' id='new_recovered' value='{{ todo.new_recovered }}' disabled></td>
-     <td><input type='text' id='active_cases' value='{{ todo.active_cases }}' disabled></td>
-     <td><input type='text' id='serious' value='{{ todo.serious }}' disabled></td>
-     <td><input type='text' id='total_cases_percent' value='{{ todo.total_cases_percent }}' disabled></td>
-     <td><input type='text' id='deaths_percent' value='{{ todo.deaths_percent }}' disabled></td>
-     <td><input type='text' id='total_tests' value='{{ todo.total_tests }}' disabled></td>
-     <td><input type='text' id='tests_percent' value='{{ todo.tests_percent }}' disabled></td>
-     <td><input type='text' id='population' value='{{ todo.population }}' disabled></td>
-     <td><input type='text' id='continent' value='{{ todo.continent }}' disabled></td>
-     <td><input type='text' id='CaseEveryXppl' value='{{ todo.CaseEveryXppl }}' disabled></td>
-     <td><input type='text' id='DeathEveryXppl' value='{{ todo.DeathEveryXppl }}' disabled></td>
-     <td><input type='text' id='TesteveryXppl' value='{{ todo.TesteveryXppl }}' disabled></td>
+     <td id='id'>{{ todo.id }}</td>
+     <td id='country'>{{ todo.Country }}</td>
+     <td id='total_cases' >{{ todo.TotalCases }}</td>
+     <td id='new_cases' >{{ todo.New_cases }}</td>
+     <td id='total_Deaths' >{{ todo.total_Deaths }}</td>
+     <td id='new_deaths' >{{ todo.new_deaths }}</td>
+     <td id='total_recovered' >{{ todo.total_recovered }}</td>
+     <td id='new_recovered' >{{ todo.new_recovered }}</td>
+     <td id='active_cases' >{{ todo.active_cases }}</td>
+     <td id='serious' >{{ todo.serious }}</td>
+     <td id='total_cases_percent' >{{ todo.total_cases_percent }}</td>
+     <td id='deaths_percent' >{{ todo.deaths_percent }}</td>
+     <td id='total_tests' >{{ todo.total_tests }}</td>
+     <td id='tests_percent' >{{ todo.tests_percent }}</td>
+     <td id='population' >{{ todo.population }}</td>
+     <td id='continent' >{{ todo.continent }}</td>
+     <td id='CaseEveryXppl' >{{ todo.CaseEveryXppl }}</td>
+     <td id='DeathEveryXppl' >{{ todo.DeathEveryXppl }}</td>
+     <td id='TesteveryXppl' >{{ todo.TesteveryXppl }}</td>
      <td><p data-placement="top" data-toggle="tooltip" title="Edit"><a href="/edit/{{ todo.Country }}" class="btn btn-primary btn-xs" data-title="Edit" data-toggle="modal" data-target="#edit" ><span class="glyphicon glyphicon-pencil"></span></a></p></td>
      <td><p data-placement="top" data-toggle="tooltip" title="Delete"><a href="/delete/{{ todo.Country }}" class="btn btn-danger btn-xs" data-title="Delete" data-toggle="modal" data-target="#delete" ><span class="glyphicon glyphicon-trash"></span></a></p></td>
     </tr>
