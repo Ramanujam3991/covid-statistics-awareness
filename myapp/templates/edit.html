@@ -24,19 +24,19 @@
    <div class="form-group row">
   <label class="col-sm-2 col-form-label">Country:</label>
   <div class="col-sm-4">
-   <input type="text" class="form-control" name="country" id="country" required maxlength="100" value="{{ report.country }}" />
+   <input type="text" class="form-control" name="country" id="country" required maxlength="100" value="{{ report.Country }}" />
   </div>
    </div>
   <div class="form-group row">
   <label class="col-sm-2 col-form-label">Total Cases:</label>
   <div class="col-sm-4">
-   <input type="text" class="form-control" name="total_cases" id="total_cases" required maxlength="254" value="{{ report.total_cases }}" />
+   <input type="text" class="form-control" name="total_cases" id="total_cases" required maxlength="254" value="{{ report.TotalCases }}" />
   </div>
    </div>
   <div class="form-group row">
   <label class="col-sm-2 col-form-label">New Cases:</label>
   <div class="col-sm-4">
-   <input type="text" class="form-control" name="new_cases" id="new_cases" required maxlength="15" value="{{ report.new_cases }}" />
+   <input type="text" class="form-control" name="new_cases" id="new_cases" required maxlength="15" value="{{ report.New_cases }}" />
   </div>
    </div><div class="form-group row">
   <label class="col-sm-2 col-form-label">Total Deaths:</label>
@@ -54,7 +54,14 @@
   <div class="col-sm-4">
    <input type="text" class="form-control" name="total_recovered" id="total_recovered" required maxlength="15" value="{{ report.total_recovered }}" />
   </div>
-   </div><div class="form-group row">
+   </div>
+   <div class="form-group row">
+   <label class="col-sm-2 col-form-label">New Recovered:</label>
+  <div class="col-sm-4">
+   <input type="text" class="form-control" name="new_recovered" id="new_recovered" required maxlength="15" value="{{ report.new_recovered }}" />
+  </div>
+   </div>
+   <div class="form-group row">
   <label class="col-sm-2 col-form-label">Active Cases:</label>
   <div class="col-sm-4">
    <input type="text" class="form-control" name="active_cases" id="active_cases" required maxlength="15" value="{{ report.active_cases }}" />
@@ -79,15 +86,41 @@
   <div class="col-sm-4">
    <input type="text" class="form-control" name="total_tests" id="total_tests" required maxlength="15" value="{{ report.total_tests }}" />
   </div>
-   </div><div class="form-group row">
+   </div>
+  <div class="form-group row">
   <label class="col-sm-2 col-form-label">Tests per 1M:</label>
   <div class="col-sm-4">
    <input type="text" class="form-control" name="tests_percent" id="tests_percent" required maxlength="15" value="{{ report.tests_percent }}" />
   </div>
-   </div><div class="form-group row">
+   </div>
+  <div class="form-group row">
   <label class="col-sm-2 col-form-label">Population:</label>
   <div class="col-sm-4">
    <input type="text" class="form-control" name="population" id="population" required maxlength="15" value="{{ report.population }}" />
+  </div>
+   </div>
+  <div class="form-group row">
+  <label class="col-sm-2 col-form-label">Continent:</label>
+  <div class="col-sm-4">
+   <input type="text" class="form-control" name="continent" id="continent" required maxlength="15" value="{{ report.continent }}" />
+  </div>
+   </div>
+  <div class="form-group row">
+  <label class="col-sm-2 col-form-label">Population:</label>
+  <div class="col-sm-4">
+   <input type="text" class="form-control" name="CaseEveryXppl" id="CaseEveryXppl" required maxlength="15" value="{{ report.CaseEveryXppl }}" />
+  </div>
+   </div>
+  <div class="form-group row">
+  <label class="col-sm-2 col-form-label">Population:</label>
+  <div class="col-sm-4">
+   <input type="text" class="form-control" name="DeathEveryXppl" id="DeathEveryXppl" required maxlength="15" value="{{ report.DeathEveryXppl }}" />
+  </div>
+   </div>
+    <div class="form-group row">
+  <label class="col-sm-2 col-form-label">Population:</label>
+  <div class="col-sm-4">
+   <input type="text" class="form-control" name="TesteveryXppl" id="TesteveryXppl" required maxlength="15" value="{{ report.TesteveryXppl }}" />
   </div>
    </div>
   <div class="form-group row">
