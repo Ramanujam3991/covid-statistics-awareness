@@ -1,5 +1,6 @@
 from django import forms
 from .models import Todo
+from .models import Covid
 class TodoForm(forms.ModelForm):
     class Meta:
         model = Todo
@@ -24,3 +25,11 @@ class TodoForm(forms.ModelForm):
       #       '1 Deathevery X ppl': forms.TextInput(attrs={ 'class': 'form-control' }),
       #       '1 Testevery X ppl': forms.TextInput(attrs={ 'class': 'form-control' }),
       # }
+
+class CovidForm(forms.ModelForm):
+        class Meta:
+            model = Covid
+            fields = ['updated', 'country','countryInfo', 'cases', 'todayCases', 'deaths', 'todayDeaths', 'recovered',
+                      'todayRecovered', 'active', 'critical', 'casesPerOneMillion', 'deathsPerOneMillion',
+                      'tests', 'testsPerOneMillion', 'population', 'continent', 'oneCasePerPeople', 'oneDeathPerPeople',
+                      'activePerOneMillion','recoveredPerOneMillion','criticalPerOneMillion']

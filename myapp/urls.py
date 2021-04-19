@@ -25,5 +25,9 @@ urlpatterns = [
     path('edit/<Country>', views.edit),
     path('update/<Country>', views.update),
     path('delete/<Country>', views.destroy),
-    path('api',views.api)
+    path('api',views.api),
+    path('new_api',views.new_api),
+    path('api_edit/<country>', views.api_edit),
+    path('api_update/<country>', views.api_update),
+    path('api_delete/<country>', views.api_destroy),
 ]

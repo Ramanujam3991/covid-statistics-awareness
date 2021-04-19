@@ -8,6 +8,7 @@ from django.urls import path
 from . import views
 from .models import Todo
 from .forms import TodoForm
+from .forms import CovidForm
 
 """
 def hello(request):
@@ -53,3 +54,37 @@ def destroy(request, Country):
 def api(request):
     report= Covid.objects.all()
     return render(request, 'api.html', {'report': report})
+
+def new_api(request):
+    if request.method == "POST":
+        form = CovidForm(request.POST)
+        if form.is_valid():
+            try:
+                form.save()
+                return redirect("/api")
+            except:
+                pass
+    else:
+        form = CovidForm()
+
+    return render(request,"new_api.html",{'form':form})
+
+
+def api_edit(request,country):
+    report = Covid.objects.get(country=country)
+    return render(request,'api_edit.html', {'report':report})
+
+def api_update(request,country):
+    report = Covid.objects.get(country=country)
+    form = CovidForm(request.POST, instance = report)
+    if form.is_valid():
+        form.save()
+        return redirect('/api')
+    print(form.errors.as_data())
+    return render(request, 'api_edit.html', {'report': report})
+def api_destroy(request, country):
+    report = Covid.objects.get(country=country)
+    report.delete()
+    return redirect('/api')
+
+

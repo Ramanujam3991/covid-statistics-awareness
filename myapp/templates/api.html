@@ -1,10 +1,10 @@
 {% extends "base.html" %}
  
-{% block title %}Add New Covid Report{% endblock title %}
+{% block title %}{% endblock title %}
  
 {% block content %}
  <div class="col-md-12">
-        <h4>Covid Datatable</h4> <span><a href="/addnew" class="btn btn-primary">Add New Record</a></span>
+        <h4>Covid Datatable</h4> <span><a href="/new_api" class="btn btn-primary">Add New Record</a></span>
         <div class="table-responsive">
   <table id="bootstrapdatatable" class="table table-striped table-bordered" width="100%">
             <thead>
@@ -27,36 +27,41 @@
                 <th>Population</th>
                 <th>Continent</th>
                 <th>One Case Per People</th>
-                <th>1 Deathevery X ppl</th>
-                <th>1 Testevery X ppl</th>
+                <th>One Death Per People</th>
+                <th>Active Per One Million</th>
+                <th>Recovered Per One Million</th>
+                <th>Critical Per One Million</th>
                 <th>Edit</th>
                 <th>Delete</th>
              </thead>
    <tbody>
-   {% for todo in report %}
+   {% for api in report %}
     <tr>  
 <!--     <td><input type="checkbox" class="checkthis" /></td>-->
-     <td><input type='text' id='id' value='{{ todo.id }}' disabled></td>
-     <td><input type='text' id='country' value='{{ todo.Country }}' disabled></td>
-     <td><input type='text' id='total_cases' value='{{ todo.TotalCases }}' disabled></td>
-     <td><input type='text' id='new_cases' value='{{ todo.New_cases }}' disabled></td>
-     <td><input type='text' id='total_Deaths' value='{{ todo.total_Deaths }}' disabled></td>
-     <td><input type='text' id='new_deaths' value='{{ todo.new_deaths }}' disabled></td>
-     <td><input type='text' id='total_recovered' value='{{ todo.total_recovered }}' disabled></td>
-     <td><input type='text' id='new_recovered' value='{{ todo.new_recovered }}' disabled></td>
-     <td><input type='text' id='active_cases' value='{{ todo.active_cases }}' disabled></td>
-     <td><input type='text' id='serious' value='{{ todo.serious }}' disabled></td>
-     <td><input type='text' id='total_cases_percent' value='{{ todo.total_cases_percent }}' disabled></td>
-     <td><input type='text' id='deaths_percent' value='{{ todo.deaths_percent }}' disabled></td>
-     <td><input type='text' id='total_tests' value='{{ todo.total_tests }}' disabled></td>
-     <td><input type='text' id='tests_percent' value='{{ todo.tests_percent }}' disabled></td>
-     <td><input type='text' id='population' value='{{ todo.population }}' disabled></td>
-     <td><input type='text' id='continent' value='{{ todo.continent }}' disabled></td>
-     <td><input type='text' id='CaseEveryXppl' value='{{ todo.CaseEveryXppl }}' disabled></td>
-     <td><input type='text' id='DeathEveryXppl' value='{{ todo.DeathEveryXppl }}' disabled></td>
-     <td><input type='text' id='TesteveryXppl' value='{{ todo.TesteveryXppl }}' disabled></td>
-     <td><p data-placement="top" data-toggle="tooltip" title="Edit"><a href="/edit/{{ todo.id }}" class="btn btn-primary btn-xs" data-title="Edit" data-toggle="modal" data-target="#edit" ><span class="glyphicon glyphicon-pencil"></span></a></p></td>
-     <td><p data-placement="top" data-toggle="tooltip" title="Delete"><a href="/delete/{{ todo.id }}" class="btn btn-danger btn-xs" data-title="Delete" data-toggle="modal" data-target="#delete" ><span class="glyphicon glyphicon-trash"></span></a></p></td>
+      <td id='updated'>{{ api.updated }}</td>
+     <td id='country'>{{ api.country }}</td>
+     <td id='countryInfo'><img src="{{ api.countryInfo.flag }}" style="height:50px; width:75px"></td>
+     <td id='cases' >{{ api.cases }}</td>
+     <td id='todayCases' >{{ api.todayCases }}</td>
+     <td id='deaths' >{{ api.deaths }}</td>
+     <td id='todayDeaths' >{{ api.todayDeaths }}</td>
+     <td id='recovered' >{{ api.recovered }}</td>
+     <td id='todayRecovered' >{{ api.todayRecovered }}</td>
+     <td id='active' >{{ api.active }}</td>
+     <td id='critical' >{{ api.critical }}</td>
+     <td id='casesPerOneMillion' >{{ api.casesPerOneMillion }}</td>
+     <td id='deathsPerOneMillion' >{{ api.deathsPerOneMillion }}</td>
+     <td id='tests' >{{ api.tests }}</td>
+     <td id='testsPerOneMillion' >{{ api.testsPerOneMillion }}</td>
+     <td id='population' >{{ api.population }}</td>
+     <td id='continent' >{{ api.continent }}</td>
+     <td id='oneCasePerPeople' >{{ api.oneCasePerPeople }}</td>
+     <td id='oneDeathPerPeople' >{{ api.oneDeathPerPeople }}</td>
+     <td id='activePerOneMillion' >{{ api.activePerOneMillion }}</td>
+     <td id='recoveredPerOneMillion' >{{ api.recoveredPerOneMillion }}</td>
+     <td id='criticalPerOneMillion' >{{ api.criticalPerOneMillion }}</td>
+     <td><p data-placement="top" data-toggle="tooltip" title="Edit"><a href="/api_edit/{{ api.country }}" class="btn btn-primary btn-xs" data-title="Edit" data-toggle="modal" data-target="#edit" ><span class="glyphicon glyphicon-pencil"></span></a></p></td>
+     <td><p data-placement="top" data-toggle="tooltip" title="Delete"><a href="/api_delete/{{ api.country }}" class="btn btn-danger btn-xs" data-title="Delete" data-toggle="modal" data-target="#delete" ><span class="glyphicon glyphicon-trash"></span></a></p></td>
     </tr>
    {% endfor %} 
    </tbody>
