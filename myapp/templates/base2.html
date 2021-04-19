@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lambton Flight Ticket Booking</title>
+    <title>Lambton Covid Statistics</title>
+
     <link rel="shortcut icon" href="{% static 'images/title.png' %}" type="image/x-icon" />
     <!-- External css -->
     <link rel="stylesheet" type="text/css" href="{% static 'css/home_desktop.css' %}">
@@ -18,11 +19,17 @@
       <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
 
-
     <script src="{% static 'js/home.js'%}" type="text/javascript"></script>
     <script src="{% static 'js/plugin_slideshow.js'%}" type="text/javascript"></script>
+<link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+
+<script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.16/js/dataTables.bootstrap4.min.js"></script>
+
     <script>
         $(document).ready(function(){
+
             var email =  sessionStorage.getItem("email");
             if(email!=undefined && email.trim()!= '' && email!= 'undefined' && email!=null)
             {
@@ -42,6 +49,11 @@
                 });
                  $('#radio-2').attr('checked','checked')
             $('#radio-2').trigger('click')
+             $('#bootstrapdatatable').DataTable({
+                  "aLengthMenu": [[3, 5, 10, 25, -1], [3, 5, 10, 25, "All"]],
+                    "iDisplayLength": 5
+                   }
+                );
         })
 
     </script>
@@ -60,6 +72,7 @@
 
         }
     </script>
+
     <link rel="stylesheet" href="{%static 'css/home_tab.css'%}" media="screen and (min-width: 481px) and (max-width: 768px)">
     <link rel="stylesheet" href="{%static 'css/slideshow.css'%}" media="screen and (min-width:769px)">
     <link rel="stylesheet" href="{%static 'css/home_mobile.css'%}" media="screen and (max-width: 480px)">
@@ -88,10 +101,10 @@
                   </fieldset>
             </li>
             <li class="nav-right"><a href="#"><img src="{%static 'images/settings.png'%}" id="settings" alt="settings" ></a></li>
-            <li class="nav-right"><a href="html/login.html"><label class="login-label">Login/Signup</label></a></li>
+            <li class="nav-right"><a href="/admin"><label class="login-label">Admin Panel</label></a></li>
             <li class="nav-right desktop-only">
                 <form method="post" action="submit">
-                    <input id="nav-search" type="text" placeholder="Search flight details here">
+                    <input id="nav-search" type="text" placeholder="covid stats details here">
                 </form>
             </li>
         </ul>
@@ -130,6 +143,10 @@
             <article>
                <h3 class="sub-heading" id="booking-h3"> Covid Stats <img src="{% static 'images/collapse.png'%}" alt="icon" class="collapse-btn"></h3>
                <div id = "ticket-div" class="collapse-cls">
+
+                     <div class="row">
+                        {% block content %}{% endblock %}
+                     </div>
 
               </div>
 

@@ -1,0 +1,141 @@
+{% extends "base.html" %}
+
+{% block title %}{% endblock title %}
+
+{% block content %}
+<div class="col-md-12">
+    <h4>Update </h4>
+ <form method="POST" class="post-form" action="/update/{{report.Country}}">
+   {% csrf_token %}
+  <div class="container">
+ <br>
+  <div class="form-group row">
+  <label class="col-sm-1 col-form-label"></label>
+  <div class="col-sm-4">
+  <h3>Update Details</h3>
+  </div>
+   </div>
+  <div class="form-group row">
+  <label class="col-sm-2 col-form-label">Id:</label>
+  <div class="col-sm-4">
+   <input type="text" class="form-control" name="id" id="id" required maxlength="20" value="{{ report.id }}"/>
+  </div>
+   </div>
+   <div class="form-group row">
+  <label class="col-sm-2 col-form-label">Country:</label>
+  <div class="col-sm-4">
+   <input type="text" class="form-control" name="Country" id="Country" required maxlength="100" value="{{ report.Country }}" />
+  </div>
+   </div>
+  <div class="form-group row">
+  <label class="col-sm-2 col-form-label">Total Cases:</label>
+  <div class="col-sm-4">
+   <input type="text" class="form-control" name="TotalCases" id="TotalCases" required maxlength="254" value="{{ report.TotalCases }}" />
+  </div>
+   </div>
+  <div class="form-group row">
+  <label class="col-sm-2 col-form-label">New Cases:</label>
+  <div class="col-sm-4">
+   <input type="text" class="form-control" name="New_cases" id="New_cases" required maxlength="15" value="{{ report.New_cases }}" />
+  </div>
+   </div>
+   <div class="form-group row">
+  <label class="col-sm-2 col-form-label">Total Deaths:</label>
+  <div class="col-sm-4">
+   <input type="text" class="form-control" name="total_Deaths" id="total_Deaths" required maxlength="15" value="{{ report.total_Deaths }}" />
+  </div>
+   </div>
+   <div class="form-group row">
+  <label class="col-sm-2 col-form-label">Total Deaths:</label>
+  <div class="col-sm-4">
+   <input type="text" class="form-control" name="new_deaths" id="new_deaths" required maxlength="15" value="{{ report.new_deaths }}" />
+  </div>
+   </div>
+   <div class="form-group row">
+  <label class="col-sm-2 col-form-label">Total Recovered:</label>
+  <div class="col-sm-4">
+   <input type="text" class="form-control" name="total_recovered" id="total_recovered" required maxlength="15" value="{{ report.total_recovered }}" />
+  </div>
+   </div>
+   <div class="form-group row">
+   <label class="col-sm-2 col-form-label">New Recovered:</label>
+  <div class="col-sm-4">
+   <input type="text" class="form-control" name="new_recovered" id="new_recovered" required maxlength="15" value="{{ report.new_recovered }}" />
+  </div>
+   </div>
+   <div class="form-group row">
+  <label class="col-sm-2 col-form-label">Active Cases:</label>
+  <div class="col-sm-4">
+   <input type="text" class="form-control" name="active_cases" id="active_cases" required maxlength="15" value="{{ report.active_cases }}" />
+  </div>
+   </div>
+   <div class="form-group row">
+  <label class="col-sm-2 col-form-label">Serious:</label>
+  <div class="col-sm-4">
+   <input type="text" class="form-control" name="serious" id="serious" required maxlength="15" value="{{ report.serious }}" />
+  </div>
+   </div>
+   <div class="form-group row">
+  <label class="col-sm-2 col-form-label">Total Cases per 1M:</label>
+  <div class="col-sm-4">
+   <input type="text" class="form-control" name="total_cases_percent" id="total_cases_percent" required maxlength="15" value="{{ report.total_cases_percent }}" />
+  </div>
+   </div>
+   <div class="form-group row">
+  <label class="col-sm-2 col-form-label">Deaths per 1M:</label>
+  <div class="col-sm-4">
+   <input type="text" class="form-control" name="deaths_percent" id="deaths_percent" required maxlength="15" value="{{ report.deaths_percent }}" />
+  </div>
+   </div>
+   <div class="form-group row">
+  <label class="col-sm-2 col-form-label">Total Tests:</label>
+  <div class="col-sm-4">
+   <input type="text" class="form-control" name="total_tests" id="total_tests" required maxlength="15" value="{{ report.total_tests }}" />
+  </div>
+   </div>
+  <div class="form-group row">
+  <label class="col-sm-2 col-form-label">Tests per 1M:</label>
+  <div class="col-sm-4">
+   <input type="text" class="form-control" name="tests_percent" id="tests_percent" required maxlength="15" value="{{ report.tests_percent }}" />
+  </div>
+   </div>
+  <div class="form-group row">
+  <label class="col-sm-2 col-form-label">Population:</label>
+  <div class="col-sm-4">
+   <input type="text" class="form-control" name="population" id="population" required maxlength="15" value="{{ report.population }}" />
+  </div>
+   </div>
+  <div class="form-group row">
+  <label class="col-sm-2 col-form-label">Continent:</label>
+  <div class="col-sm-4">
+   <input type="text" class="form-control" name="continent" id="continent" required maxlength="15" value="{{ report.continent }}" />
+  </div>
+   </div>
+  <div class="form-group row">
+  <label class="col-sm-2 col-form-label">1 Caseevery X ppl:</label>
+  <div class="col-sm-4">
+   <input type="text" class="form-control" name="CaseEveryXppl" id="CaseEveryXppl" required maxlength="15" value="{{ report.CaseEveryXppl }}" />
+  </div>
+   </div>
+  <div class="form-group row">
+  <label class="col-sm-2 col-form-label">1 Deathevery X ppl:</label>
+  <div class="col-sm-4">
+   <input type="text" class="form-control" name="DeathEveryXppl" id="DeathEveryXppl" required maxlength="15" value="{{ report.DeathEveryXppl }}" />
+  </div>
+   </div>
+    <div class="form-group row">
+  <label class="col-sm-2 col-form-label">1 Testevery X ppl:</label>
+  <div class="col-sm-4">
+   <input type="text" class="form-control" name="TesteveryXppl" id="TesteveryXppl" required maxlength="15" value="{{ report.TesteveryXppl }}" />
+  </div>
+   </div>
+  <div class="form-group row">
+  <label class="col-sm-1 col-form-label"></label>
+  <div class="col-sm-4">
+  <button type="submit" class="btn btn-success btn-lg">Update</button>
+  </div>
+   </div>
+  </div>
+ </form>
+{% endblock content %}
+</div>

@@ -9,10 +9,6 @@
 .img-menu{
   width:2em;
 }
-
-.hidden_data{
-display:none;
-}
 .img-logo{
   width:2.5em;
 }
@@ -86,7 +82,7 @@ nav li a:hover {
   padding-left:0.
   5em;
   border-radius: 5em;
-  background-image: url("../images/menu_search.png");
+  background-image: url("../images/menu_search.7d42bb6c1ee2.png");
   background-size: 1.5em;
   background-repeat: no-repeat;
   background-position: right;
@@ -96,7 +92,7 @@ nav li a:hover {
   overflow: auto;
   display: block;
   width: 100%;
-  background-image: url("../images/banner.jpg");
+  background-image: url("../images/banner.e5c0652b1e5a.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
