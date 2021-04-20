@@ -119,8 +119,10 @@ def scipy_data(column_list):
         out = read_mongodb(col_name)
         mf =  pd.DataFrame(out)
         print('='*20,col_name,'='*20)
-        mf = mf[~mf[x_axis].isin(x)]
-        total_cases.append(mf[key].sum())
+        # mf = mf[~mf[x_axis].isin(x)]
+        # total_cases.append(mf[key].sum())
+        sum_val = pd.to_numeric(mf[key], errors='coerce').sum()
+        total_cases.append(sum_val)
     #databaseServer.close()
     x = np.array([1,5,7,10,15])
     y = np.array(total_cases)    
