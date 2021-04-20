@@ -4,10 +4,14 @@
 .desktop-and-mobile-only{
     display:block;
   }
+
 .nav-right {float:right}
 .desktop-only{display:inline-block;}
 .img-logo{
   width:2.5em;
+}
+.hidden_data{
+display:none;
 }
 .logo-div{
   text-align: center;
