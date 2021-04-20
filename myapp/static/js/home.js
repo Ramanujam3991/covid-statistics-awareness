@@ -1,6 +1,5 @@
 $(document).ready(function(){
 $('#search-graph').click(function(){
-alert()
 })
 $('.search-results').hide();
 $('#search-button').click(function(){
