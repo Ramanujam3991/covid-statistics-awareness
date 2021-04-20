@@ -86,10 +86,10 @@
 
         <ul>
 
-            <li><a href="#">Home</a></li>
-            <li><a href="html/weather.html">Weather</a></li>
-            <li><a href="html/contact_us.html">Contact Us</a></li>
-            <li><a href="html/faq.html">FAQ</a></li>
+            <li><a href="/">Home</a></li>
+            <li><a href="/covid">Charts (Matplotlib)</a></li>
+            <li><a href="/api">Covid Api Data</a></li>
+<!--            <li><a href="html/faq.html">FAQ</a></li>-->
 
             <li class="nav-right theme-li desktop-only">
                 <fieldset style="margin-top: 1em;">
@@ -102,11 +102,11 @@
             </li>
             <li class="nav-right"><a href="#"><img src="{%static 'images/settings.png'%}" id="settings" alt="settings" ></a></li>
             <li class="nav-right"><a href="/admin"><label class="login-label">Admin Panel</label></a></li>
-            <li class="nav-right desktop-only">
-                <form method="post" action="submit">
-                    <input id="nav-search" type="text" placeholder="covid stats details here">
-                </form>
-            </li>
+<!--            <li class="nav-right desktop-only">-->
+<!--                <form method="post" action="submit">-->
+<!--                    <input id="nav-search" type="text" placeholder="covid stats details here">-->
+<!--                </form>-->
+<!--            </li>-->
         </ul>
     </nav>
     <nav class="tablet-only">
@@ -117,14 +117,14 @@
             </h2>
         </div>
         <ul>
-            <li><a href="#"><img class="img-menu" src="images/menu_home.png" alt="home"><br>Home</a></li>
-            <li><a href="html/weather.html"><img class="img-menu" src="images/menu_history.png" alt="history"><br>Weather</a></li>
+            <li><a href="/"><img class="img-menu" src="{%static 'images/menu_home.png'%}" alt="home"><br>Home</a></li>
+            <li><a href="/covid"><img class="img-menu" src="{%static 'images/menu_history.png'%}" alt="Charts"><br>Charts</a></li>
 
-            <li><a href="html/contact_us.html"><img class="img-menu" src="images/menu_contact.png" alt="contact"><br>Contact us</a></li>
-            <li><a href="html/about_us.html"><img class="img-menu" src="images/menu_about.png" alt="about"><br>FAQ</a></li>
+            <li><a href="html/api"><img class="img-menu" src="{%static 'images/menu_contact.png'%}" alt="API"><br>API</a></li>
+<!--            <li><a href="html/about_us.html"><img class="img-menu" src="{%static 'images/menu_about.png'%}" alt="about"><br>FAQ</a></li>-->
 
-            <li class="nav-right"><a href="#"><img class="img-menu" src="{%static 'images/settings.png'}"  alt="settings"><br>Settings</a></li>
-            <li class="nav-right"><a href="#"><img class="img-menu" src="images/menu_login.png" alt="login-signup"><br><label class="login-label">Login/Signup</label></a></li>
+            <li class="nav-right"><a href="#"><img class="img-menu" src="{%static 'images/settings.png'%}"  alt="settings"><br>Settings</a></li>
+            <li class="nav-right"><a href="#"><img class="img-menu" src="{%static 'images/menu_login.png'%}" alt="login-signup"><br><label class="login-label">Login/Signup</label></a></li>
 
         </ul>
     </nav>
@@ -141,7 +141,7 @@
         </div>
         <main id="main">
             <article>
-               <h3 class="sub-heading" id="booking-h3"> Covid Stats <img src="{% static 'images/collapse.png'%}" alt="icon" class="collapse-btn"></h3>
+               <h3 class="sub-heading" id="booking-h3"> Covid Data (Crud Operations) <img src="{% static 'images/collapse.png'%}" alt="icon" class="collapse-btn"></h3>
                <div id = "ticket-div" class="collapse-cls">
 
                      <div class="row">

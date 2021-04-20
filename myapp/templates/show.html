@@ -4,9 +4,9 @@
  
 {% block content %}
  <div class="col-md-12">
-        <h4>Covid Datatable</h4> <span><a href="/addnew" class="btn btn-primary">Add New Record</a></span>
+        <h4>Covid Data From Web Crawler</h4> <span><a href="/addnew" class="btn btn-primary">Add New Record</a></span>
         <div class="table-responsive">
-  <table id="bootstrapdatatable" class="table  table-bordered" width="100%">
+  <table id="bootstrapdatatable" class="table  table-bordered table-striped table-dark" width="100%">
             <thead>
 <!--                <th><input type="checkbox" id="checkall" /></th>-->
                 <th class="hidden_data">ID</th>
@@ -23,7 +23,7 @@
                 <th class="hidden_data">Deaths per 1M</th>
                 <th>Total Tests</th>
                 <th class="hidden_data">Tests per 1M</th>
-                <th>Population</th>
+                <th class="hidden_data">Population</th>
                 <th>Continent</th>
                 <th class="hidden_data">1 Caseevery X ppl</th>
                 <th class="hidden_data">1 Deathevery X ppl</th>
@@ -31,7 +31,7 @@
                 <th>Edit</th>
                 <th>Delete</th>
              </thead>
-   <tbody>
+   <tbody style="color:black">
    {% for todo in report %}
     <tr>  
 <!--     <td><input type="checkbox" class="checkthis" /></td>-->
@@ -49,13 +49,15 @@
      <td class="hidden_data" id='deaths_percent' >{{ todo.deaths_percent }}</td>
      <td id='total_tests' >{{ todo.total_tests }}</td>
      <td  class="hidden_data" id='tests_percent' >{{ todo.tests_percent }}</td>
-     <td id='population' >{{ todo.population }}</td>
+     <td class="hidden_data" id='population' >{{ todo.population }}</td>
      <td id='continent' >{{ todo.continent }}</td>
      <td class="hidden_data" id='CaseEveryXppl' >{{ todo.CaseEveryXppl }}</td>
      <td class="hidden_data" id='DeathEveryXppl' >{{ todo.DeathEveryXppl }}</td>
      <td class="hidden_data" id='TesteveryXppl' >{{ todo.TesteveryXppl }}</td>
-     <td><p data-placement="top" data-toggle="tooltip" title="Edit"><a href="/edit/{{ todo.Country }}" class="btn btn-primary btn-xs" data-title="Edit" data-toggle="modal" data-target="#edit" ><span class="glyphicon glyphicon-pencil"></span></a></p></td>
-     <td><p data-placement="top" data-toggle="tooltip" title="Delete"><a href="/delete/{{ todo.Country }}" class="btn btn-danger btn-xs" data-title="Delete" data-toggle="modal" data-target="#delete" ><span class="glyphicon glyphicon-trash"></span></a></p></td>
+        <td><p data-placement="top" data-toggle="tooltip" title="Edit"><a href="/edit/{{ todo.Country }}"><span class="glyphicon glyphicon-pencil"></span></a></p><!--<a href="/edit/{{ todo.Country }}" class="btn btn-primary btn-xs" data-title="Edit" data-toggle="modal" data-target="#edit" ><span class="glyphicon glyphicon-pencil"></span></a>--></td>
+     <td><p data-placement="top" data-toggle="tooltip" title="Delete"><a href="/delete/{{ todo.Country }}"><span class="glyphicon glyphicon-trash"></span></a><!--<a href="/delete/{{ todo.Country }}" class="btn btn-danger btn-xs" data-title="Delete" data-toggle="modal" data-target="#delete" >--></a></p></td>
+<!--        <td><p data-placement="top" data-toggle="tooltip" title="Alert" class="alert_user"><a href="/alert_user"><span class="alert_user glyphicon glyphicon-warning-sign"></span></a>&lt;!&ndash;<a href="/delete/{{ todo.Country }}" class="btn btn-danger btn-xs" data-title="Delete" data-toggle="modal" data-target="#delete" >&ndash;&gt;</a></p></td>-->
+
     </tr>
    {% endfor %} 
    </tbody>

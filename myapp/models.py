@@ -26,9 +26,9 @@ class Todo(models.Model):
        db_table="web_crawler"
 
 class Covid(models.Model):
-    updated = models.IntegerField(primary_key=True)
-    country = models.CharField(max_length=100)
-    countryInfo = models.CharField(max_length=100)
+    updated = models.CharField(max_length=100)
+    country = models.CharField(primary_key=True,max_length=100)
+    countryInfo = models.CharField(max_length=150)
     cases = models.CharField(max_length=100)
     todayCases = models.CharField(max_length=100)
     deaths = models.CharField(max_length=100)

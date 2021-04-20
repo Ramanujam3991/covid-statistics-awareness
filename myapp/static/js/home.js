@@ -1,5 +1,8 @@
 $(document).ready(function(){
-    $('.search-results').hide();
+$('#search-graph').click(function(){
+alert()
+})
+$('.search-results').hide();
 $('#search-button').click(function(){
 
     if($('#fromplace').val() == '' || $('#dest').val() == '' )
@@ -212,5 +215,7 @@ $('.theme').click(function(){
       function capitalizeFirstLetter(string) {
         return string.charAt(0).toUpperCase() + string.slice(1).toLowerCase();
       }
+
+
 
 });

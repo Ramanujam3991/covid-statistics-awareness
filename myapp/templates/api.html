@@ -1,0 +1,72 @@
+{% extends "base2.html" %}
+ 
+{% block title %}{% endblock title %}
+ 
+{% block content %}
+ <div class="col-md-12">
+        <h4>Covid From API</h4> <span><a href="/new_api" class="btn btn-primary">Add New Record</a></span>
+        <div class="table-responsive">
+  <table id="bootstrapdatatable" class="table table-striped table-bordered" width="100%">
+            <thead>
+<!--                <th><input type="checkbox" id="checkall" /></th>-->
+                <th>Updated</th>
+                <th>Country</th>
+                <th>Country Info</th>
+                <th>Cases</th>
+                <th>Today Cases</th>
+                <th>Deaths</th>
+                <th>Today Deaths</th>
+                <th>Recovered</th>
+                <th>Today Recovered</th>
+                <th>Active</th>
+                <th>Critical</th>
+                <th>Cases Per One Million</th>
+                <th>Deaths Per One Million</th>
+                <th>Tests</th>
+                <th>Tests Per One Million</th>
+                <th>Population</th>
+                <th>Continent</th>
+                <th>One Case Per People</th>
+                <th>One Death Per People</th>
+                <th>Active Per One Million</th>
+                <th>Recovered Per One Million</th>
+                <th>Critical Per One Million</th>
+                <th>Edit</th>
+                <th>Delete</th>
+             </thead>
+   <tbody style="color:black">
+   {% for api in report %}
+    <tr>  
+<!--     <td><input type="checkbox" class="checkthis" /></td>-->
+      <td id='updated'>{{ api.updated }}</td>
+     <td id='country'>{{ api.country }}</td>
+     <td id='countryInfo'><img src="{{ api.countryInfo.flag }}" style="height:50px; width:75px"></td>
+     <td id='cases' >{{ api.cases }}</td>
+     <td id='todayCases' >{{ api.todayCases }}</td>
+     <td id='deaths' >{{ api.deaths }}</td>
+     <td id='todayDeaths' >{{ api.todayDeaths }}</td>
+     <td id='recovered' >{{ api.recovered }}</td>
+     <td id='todayRecovered' >{{ api.todayRecovered }}</td>
+     <td id='active' >{{ api.active }}</td>
+     <td id='critical' >{{ api.critical }}</td>
+     <td id='casesPerOneMillion' >{{ api.casesPerOneMillion }}</td>
+     <td id='deathsPerOneMillion' >{{ api.deathsPerOneMillion }}</td>
+     <td id='tests' >{{ api.tests }}</td>
+     <td id='testsPerOneMillion' >{{ api.testsPerOneMillion }}</td>
+     <td id='population' >{{ api.population }}</td>
+     <td id='continent' >{{ api.continent }}</td>
+     <td id='oneCasePerPeople' >{{ api.oneCasePerPeople }}</td>
+     <td id='oneDeathPerPeople' >{{ api.oneDeathPerPeople }}</td>
+     <td id='activePerOneMillion' >{{ api.activePerOneMillion }}</td>
+     <td id='recoveredPerOneMillion' >{{ api.recoveredPerOneMillion }}</td>
+     <td id='criticalPerOneMillion' >{{ api.criticalPerOneMillion }}</td>
+     <td><p data-placement="top" data-toggle="tooltip" title="Edit"><a href="/api_edit/{{ api.country }}" ><span class="glyphicon glyphicon-pencil"></span></a></p></td>
+     <td><p data-placement="top" data-toggle="tooltip" title="Delete"><a href="/api_delete/{{ api.country }}"  ><span class="glyphicon glyphicon-trash"></span></a></p></td>
+    </tr>
+   {% endfor %} 
+   </tbody>
+
+  </table>
+             </div>
+    </div>
+{% endblock content %}

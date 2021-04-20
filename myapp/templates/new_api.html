@@ -1,0 +1,160 @@
+
+{% extends "base2.html" %}
+
+{% block title %}{% endblock title %}
+
+{% block content %}
+<div class="col-md-12">
+    <h4>New Report</h4>
+
+ <form method="POST" class="post-form" action="/new_api">
+   {% csrf_token %}
+  <div class="container">
+ <br>
+  <div class="form-group row">
+  <label class="col-sm-1 col-form-label"></label>
+  <div class="col-sm-4">
+  <h3>Enter Details</h3>
+  </div>
+   </div>
+   <div class="form-group row">
+  <label class="col-sm-2 col-form-label">UPDATED:</label>
+  <div class="col-sm-4">
+    {{ form.updated }}
+  </div>
+   </div>
+   <div class="form-group row">
+  <label class="col-sm-2 col-form-label">Country:</label>
+  <div class="col-sm-4">
+    {{ form.country}}
+  </div>
+   </div>
+      <div class="form-group row">
+  <label class="col-sm-2 col-form-label">Country Info:</label>
+  <div class="col-sm-4">
+    {{ form.countryInfo}}
+  </div>
+   </div>
+  <div class="form-group row">
+  <label class="col-sm-2 col-form-label">Cases:</label>
+  <div class="col-sm-4">
+    {{ form.cases }}
+  </div>
+   </div>
+  <div class="form-group row">
+  <label class="col-sm-2 col-form-label">Today Cases:</label>
+  <div class="col-sm-4">
+    {{ form.todayCases }}
+  </div>
+   </div>
+ <div class="form-group row">
+  <label class="col-sm-2 col-form-label">Deaths:</label>
+  <div class="col-sm-4">
+    {{ form.deaths }}
+  </div>
+   </div>
+  <div class="form-group row">
+  <label class="col-sm-2 col-form-label">Today Deaths:</label>
+  <div class="col-sm-4">
+    {{ form.todayDeaths }}
+  </div>
+   </div>
+  <div class="form-group row">
+  <label class="col-sm-2 col-form-label">Recovered:</label>
+  <div class="col-sm-4">
+    {{ form.recovered }}
+  </div>
+   </div>
+   <div class="form-group row">
+  <label class="col-sm-2 col-form-label">Today Recovered:</label>
+  <div class="col-sm-4">
+    {{ form.todayRecovered }}
+  </div>
+   </div>
+  <div class="form-group row">
+  <label class="col-sm-2 col-form-label">Active:</label>
+  <div class="col-sm-4">
+    {{ form.active }}
+  </div>
+   </div>
+  <div class="form-group row">
+  <label class="col-sm-2 col-form-label">Critical:</label>
+  <div class="col-sm-4">
+    {{ form.critical }}
+  </div>
+   </div>
+  <div class="form-group row">
+  <label class="col-sm-2 col-form-label">Cases Per One Million:</label>
+  <div class="col-sm-4">
+    {{ form.casesPerOneMillion }}
+  </div>
+   </div>
+  <div class="form-group row">
+  <label class="col-sm-2 col-form-label">Deaths Per One Million:</label>
+  <div class="col-sm-4">
+    {{ form.deathsPerOneMillion }}
+  </div>
+   </div>
+  <div class="form-group row">
+  <label class="col-sm-2 col-form-label">Tests:</label>
+  <div class="col-sm-4">
+    {{ form.tests }}
+  </div>
+   </div>
+  <div class="form-group row">
+  <label class="col-sm-2 col-form-label">Tests Per One Million:</label>
+  <div class="col-sm-4">
+    {{ form.testsPerOneMillion }}
+  </div>
+   </div>
+  <div class="form-group row">
+  <label class="col-sm-2 col-form-label">Population:</label>
+  <div class="col-sm-4">
+    {{ form.population }}
+  </div>
+   </div>
+<div class="form-group row">
+  <label class="col-sm-2 col-form-label">Continent:</label>
+  <div class="col-sm-4">
+    {{ form.continent }}
+  </div>
+   </div>
+   <div class="form-group row">
+  <label class="col-sm-2 col-form-label">One Case Per People:</label>
+  <div class="col-sm-4">
+    {{ form.oneCasePerPeople }}
+  </div>
+   </div>  <div class="form-group row">
+  <label class="col-sm-2 col-form-label">One Death Per People:</label>
+  <div class="col-sm-4">
+    {{ form.oneDeathPerPeople }}
+  </div>
+   </div>
+   <div class="form-group row">
+  <label class="col-sm-2 col-form-label">Active Per One Million:</label>
+  <div class="col-sm-4">
+    {{ form.activePerOneMillion }}
+  </div>
+   </div>
+      <div class="form-group row">
+  <label class="col-sm-2 col-form-label">Recovered Per One Million:</label>
+  <div class="col-sm-4">
+    {{ form.recoveredPerOneMillion }}
+  </div>
+   </div>
+      <div class="form-group row">
+  <label class="col-sm-2 col-form-label">Critical Per One Million:</label>
+  <div class="col-sm-4">
+    {{ form.criticalPerOneMillion }}
+  </div>
+   </div>
+  <div class="form-group row">
+  <label class="col-sm-1 col-form-label"></label>
+  <div class="col-sm-4">
+  <button type="submit" class="btn btn-primary">Submit</button>
+  </div>
+   </div>
+  </div>
+ </form>
+</div>
+{% endblock content %}
